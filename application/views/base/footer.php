@@ -1,13 +1,23 @@
+ <div class="slim-footer">
+      <div class="container">
+        <p>Copyright 2018 &copy; All Rights Reserved. Slim Dashboard Template</p>
+        <p>Designed by: <a href="">ThemePixels</a></p>
+      </div><!-- container -->
+    </div><!-- slim-footer -->
 
-        <!-- Javascripts -->
-        <script src="<?php echo base_url().'/'?>assets/plugins/jquery/jquery-3.1.0.min.js"></script>
-        <script src="<?php echo base_url().'/'?>assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-        <script src="<?php echo base_url().'/'?>assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-        <script src="<?php echo base_url().'/'?>assets/plugins/uniform/js/jquery.uniform.standalone.js"></script>
-        <script src="<?php echo base_url().'/'?>assets/plugins/switchery/switchery.min.js"></script>
+    <script src="<?= base_url().'assets/'?>lib/jquery/js/jquery.js"></script>
+    <script src="<?= base_url().'assets/'?>lib/popper.js/js/popper.js"></script>
+    <script src="<?= base_url().'assets/'?>lib/bootstrap/js/bootstrap.js"></script>
+    <script src="<?= base_url().'assets/'?>lib/jquery.cookie/js/jquery.cookie.js"></script>
+    <script src="<?= base_url().'assets/'?>lib/d3/js/d3.js"></script>
+    <script src="<?= base_url().'assets/'?>lib/rickshaw/js/rickshaw.min.js"></script>
+    <script src="<?= base_url().'assets/'?>lib/Flot/js/jquery.flot.js"></script>
+    <script src="<?= base_url().'assets/'?>lib/Flot/js/jquery.flot.resize.js"></script>
+    <script src="<?= base_url().'assets/'?>lib/peity/js/jquery.peity.js"></script>
 
-
-
+    <script src="<?= base_url().'assets/'?>js/slim.js"></script>
+    <script src="<?= base_url().'assets/'?>js/ResizeSensor.js"></script>
+    
 
         <?php if (isset($js)) {
         	$this->load->view('js/' . $js);
@@ -18,5 +28,5 @@
         } ?>
 
 
-    </body>
+  </body>
 </html>

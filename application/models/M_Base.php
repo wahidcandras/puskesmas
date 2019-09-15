@@ -18,10 +18,41 @@ class M_Base extends CI_Model {
 		$this->db->where('username', $id);
 		return $this->db->get('sysuser');
 	}
+	function get_puskesmas($id){
+		$this->db->where('id', $id);
+		return $this->db->get('tblpuskesmas');
+	}
 
 	function create_log($data){
 		return $this->db->insert('syslog', $data);
 	}
+
+	function code($id){
+		$this->db->where('idgroup', $id);
+		return $this->db->get('syscode');
+	}
+
+	function code_detail($group, $code){
+		$this->db->where('idgroup', $group);
+		$this->db->where('idcode', $code);
+		return $this->db->get('syscode');
+	}
+
+	function add_code($data){
+		return $this->db->insert('syscode', $data);
+	}
+	function edit_code($group,$idcode, $data){
+		$this->db->where('idgroup', $group);
+		$this->db->where('idcode', $idcode);
+		return $this->db->update('syscode', $data);
+	}
+	function delete_code($group,$idcode){
+		$this->db->where('idgroup', $group);
+		$this->db->where('idcode', $idcode);
+		return $this->db->delete('syscode');
+	}
+
+	
 
 }
 

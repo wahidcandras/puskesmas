@@ -35,22 +35,21 @@ class Auth extends CI_Controller {
 
 			if ($this->validate_user_credential($this->input->post('username'),$this->input->post('password'))) {
 				$data['user'] =  $this->M_Base->get_user($this->input->post('username'))->row_array();
+				$data['puskesmas'] =  $this->M_Base->get_puskesmas($data['user']['user_hospital'])->row_array();
 				$data['logged_in'] = true;
 
 				$this->session->set_userdata( $data);
 
 				//insert log
 				$log = array(
-					"user_id"	=> $this->input->post('username'),
+					"user_id"	=> $data['user']['id'],
 					"action"	=> "Login",
 					"description"	=> "Login Successful",
 					"result"	=> true
 				);
 				$this->M_Base->create_log($log);
-				
-				echo  $this->session->userdata['user']['username'];
-
-				//redirect('Home','refresh');
+			
+				redirect('Home','refresh');
 
 			}else{
 				$log = array(
@@ -78,7 +77,7 @@ class Auth extends CI_Controller {
 		// add log
 
 		$log = array(
-			"user_id"	=> $this->session->userdata['user']['username'],
+			"user_id"	=> $this->session->userdata['user']['id'],
 			"action"	=> "Logout",
 			"description"	=> "Logout",
 			"result"	=> false
