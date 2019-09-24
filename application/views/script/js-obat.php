@@ -20,6 +20,8 @@
 
       function binding(){
       	$.post("<?= site_url('Master/Obat/binding')?>",function(data){
+          $("#datatable2").dataTable().fnDestroy();
+
       		 $('#datatable2 > tbody').html('');
       		$.each(data, function(i, val) {
 			    $('#datatable2 > tbody').append(""
@@ -35,6 +37,13 @@
 			    	+'</tr>'
 			    	);
 			});
+          setTimeout(function(){ 
+           $('#datatable2').DataTable({
+            bLengthChange: false,
+            searching: true,
+            responsive: true
+          });
+         }, 100);
 
       
       	},"JSON");
