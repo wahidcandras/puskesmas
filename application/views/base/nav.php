@@ -14,7 +14,7 @@
             </a>
             <div class="sub-item">
               <ul>
-                <li><a>Registrasi</a></li>
+                <li><a href="<?= site_url('Pelayanan/Registrasi')?>">Registrasi</a></li>
                 <li><a>Rekam Medis</a></li>
                 <li><a>Resep Obat</a></li>
               </ul>
