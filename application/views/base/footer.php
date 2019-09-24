@@ -14,14 +14,16 @@
     <script src="<?= base_url().'assets/'?>lib/Flot/js/jquery.flot.js"></script>
     <script src="<?= base_url().'assets/'?>lib/Flot/js/jquery.flot.resize.js"></script>
     <script src="<?= base_url().'assets/'?>lib/peity/js/jquery.peity.js"></script>
-
+    
+     <?php if (isset($js)) {
+            $this->load->view('js/' . $js);
+        } ?>
+        
     <script src="<?= base_url().'assets/'?>js/slim.js"></script>
     <script src="<?= base_url().'assets/'?>js/ResizeSensor.js"></script>
     
 
-        <?php if (isset($js)) {
-        	$this->load->view('js/' . $js);
-        } ?>
+       
 
         <?php if (isset($script)) {
         	$this->load->view('script/' . $script);

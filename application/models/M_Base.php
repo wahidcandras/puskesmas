@@ -32,6 +32,12 @@ class M_Base extends CI_Model {
 		return $this->db->get('syscode');
 	}
 
+	function region($parent,$level){
+		$this->db->where('parent_id', $parent);
+		$this->db->where('level', $level);
+		return $this->db->get('sysregion');
+	}
+
 	function code_detail($group, $code){
 		$this->db->where('idgroup', $group);
 		$this->db->where('idcode', $code);
@@ -51,6 +57,8 @@ class M_Base extends CI_Model {
 		$this->db->where('idcode', $idcode);
 		return $this->db->delete('syscode');
 	}
+
+	
 
 	
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2019 at 04:16 PM
+-- Generation Time: Sep 24, 2019 at 05:50 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.1.26
 
@@ -147,7 +147,11 @@ INSERT INTO `syslog` (`id`, `user_id`, `action`, `description`, `result`, `times
 (32, 1, 'Delete Code', 'Successfull Delete code 100003', '0', '2019-09-14 14:49:48'),
 (33, 1, 'Login', 'Login Successful', '1', '2019-09-15 20:42:18'),
 (34, 1, 'Add New Obat', 'Successfull add new obat 9999', '1', '2019-09-15 21:12:50'),
-(35, 1, 'Update Obat', 'Successfull Update Obat 9999', '1', '2019-09-15 21:13:36');
+(35, 1, 'Update Obat', 'Successfull Update Obat 9999', '1', '2019-09-15 21:13:36'),
+(36, 1, 'Login', 'Login Successful', '1', '2019-09-23 16:35:18'),
+(37, 1, 'Login', 'Login Successful', '1', '2019-09-23 16:41:34'),
+(38, 1, 'Login', 'Login Successful', '1', '2019-09-23 18:01:39'),
+(39, 1, 'Login', 'Login Successful', '1', '2019-09-24 09:38:06');
 
 -- --------------------------------------------------------
 
@@ -170,11 +174,247 @@ CREATE TABLE `sysmodule` (
 --
 
 CREATE TABLE `sysregion` (
-  `id` varchar(255) DEFAULT NULL,
+  `id` varchar(20) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `parent_id` varchar(255) DEFAULT NULL,
   `level` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sysregion`
+--
+
+INSERT INTO `sysregion` (`id`, `name`, `parent_id`, `level`) VALUES
+('3322010', 'GETASAN', '3322', 3),
+('3322010001', 'KOPENG', '3322010', 4),
+('3322010002', 'BATUR', '3322010', 4),
+('3322010003', 'TAJUK', '3322010', 4),
+('3322010004', 'JETAK', '3322010', 4),
+('3322010005', 'SAMIRONO', '3322010', 4),
+('3322010006', 'SUMOGAWE', '3322010', 4),
+('3322010007', 'POLOBOGO', '3322010', 4),
+('3322010008', 'MANGGIHAN', '3322010', 4),
+('3322010009', 'GETASAN', '3322010', 4),
+('3322010010', 'WATES', '3322010', 4),
+('3322010011', 'TOLOKAN', '3322010', 4),
+('3322010012', 'NGRAWAN', '3322010', 4),
+('3322010013', 'NOGOSAREN', '3322010', 4),
+('3322020', 'TENGARAN', '3322', 3),
+('3322020001', 'TENGARAN', '3322020', 4),
+('3322020002', 'TEGALREJO', '3322020', 4),
+('3322020004', 'SUGIHAN', '3322020', 4),
+('3322020007', 'CUKIL', '3322020', 4),
+('3322020008', 'KLERO', '3322020', 4),
+('3322020010', 'PATEMON', '3322020', 4),
+('3322020011', 'KARANGDUREN', '3322020', 4),
+('3322020013', 'TEGALWATON', '3322020', 4),
+('3322020014', 'BARUKAN', '3322020', 4),
+('3322020015', 'NYAMAT', '3322020', 4),
+('3322030', 'SUSUKAN', '3322', 3),
+('3322030012', 'BADRAN', '3322030', 4),
+('3322030013', 'TIMPIK', '3322030', 4),
+('3322030014', 'TAWANG', '3322030', 4),
+('3322030015', 'BAKALREJO', '3322030', 4),
+('3322030016', 'KETAPANG', '3322030', 4),
+('3322030017', 'SUSUKAN', '3322030', 4),
+('3322030018', 'SIDOHARJO', '3322030', 4),
+('3322030019', 'GENTAN', '3322030', 4),
+('3322030020', 'MUNCAR', '3322030', 4),
+('3322030021', 'NGASINAN', '3322030', 4),
+('3322030022', 'KORIPAN', '3322030', 4),
+('3322031', 'KALIWUNGU', '3322', 3),
+('3322031001', 'SIWAL', '3322031', 4),
+('3322031002', 'PAGER', '3322031', 4),
+('3322031003', 'UDANWUH', '3322031', 4),
+('3322031005', 'PAPRINGAN', '3322031', 4),
+('3322031006', 'KRADENAN', '3322031', 4),
+('3322031007', 'KALIWUNGU', '3322031', 4),
+('3322031008', 'MUKIRAN', '3322031', 4),
+('3322031009', 'PAYUNGAN', '3322031', 4),
+('3322031010', 'JETIS', '3322031', 4),
+('3322031011', 'ROGOMULYO', '3322031', 4),
+('3322040', 'SURUH', '3322', 3),
+('3322040001', 'KEBOWAN', '3322040', 4),
+('3322040002', 'BEJI LOR', '3322040', 4),
+('3322040003', 'JATIREJO', '3322040', 4),
+('3322040004', 'DERSANSARI', '3322040', 4),
+('3322040005', 'PURWOREJO', '3322040', 4),
+('3322040006', 'KETANGGI', '3322040', 4),
+('3322040007', 'MEDAYU', '3322040', 4),
+('3322040008', 'BONOMERTO', '3322040', 4),
+('3322040009', 'SUKOREJO', '3322040', 4),
+('3322040010', 'KEDUNGRINGIN', '3322040', 4),
+('3322040012', 'REKSOSARI', '3322040', 4),
+('3322040014', 'PLUMBON', '3322040', 4),
+('3322040015', 'KRANDON LOR', '3322040', 4),
+('3322040016', 'CUKILAN', '3322040', 4),
+('3322040017', 'DADAPAYAM', '3322040', 4),
+('3322050', 'PABELAN', '3322', 3),
+('3322050002', 'SUMBEREJO', '3322050', 4),
+('3322050003', 'SEGIRI', '3322050', 4),
+('3322050004', 'TERBAN', '3322050', 4),
+('3322050005', 'TUKANG', '3322050', 4),
+('3322050006', 'SEMOWO', '3322050', 4),
+('3322050007', 'BENDUNGAN', '3322050', 4),
+('3322050008', 'KARANGGONDANG', '3322050', 4),
+('3322050009', 'SUKOHARJO', '3322050', 4),
+('3322050010', 'JEMBRAK', '3322050', 4),
+('3322050011', 'GLAWAN', '3322050', 4),
+('3322050012', 'KADIREJO', '3322050', 4),
+('3322050013', 'BEJATEN', '3322050', 4),
+('3322050014', 'GILING', '3322050', 4),
+('3322050015', 'PADAAN', '3322050', 4),
+('3322050016', 'KAUMAN LOR', '3322050', 4),
+('3322050017', 'PABELAN', '3322050', 4),
+('3322060', 'TUNTANG', '3322', 3),
+('3322060001', 'KALIBEJI', '3322060', 4),
+('3322060002', 'GEDANGAN', '3322060', 4),
+('3322060003', 'SRATEN', '3322060', 4),
+('3322060004', 'ROWOSARI', '3322060', 4),
+('3322060005', 'JOMBOR', '3322060', 4),
+('3322060006', 'CANDIREJO', '3322060', 4),
+('3322060007', 'KESONGO', '3322060', 4),
+('3322060008', 'WATUAGUNG', '3322060', 4),
+('3322060009', 'LOPAIT', '3322060', 4),
+('3322060010', 'TUNTANG', '3322060', 4),
+('3322060011', 'DELIK', '3322060', 4),
+('3322060012', 'TLOGO', '3322060', 4),
+('3322060013', 'KARANGTENGAH', '3322060', 4),
+('3322060014', 'KARANGANYAR', '3322060', 4),
+('3322060015', 'TLOMPAKAN', '3322060', 4),
+('3322060016', 'NGAJARAN', '3322060', 4),
+('3322070', 'BANYUBIRU', '3322', 3),
+('3322070001', 'WIROGOMO', '3322070', 4),
+('3322070002', 'KEMAMBANG', '3322070', 4),
+('3322070003', 'SEPAKUNG', '3322070', 4),
+('3322070005', 'GEDONG', '3322070', 4),
+('3322070006', 'ROWOBONI', '3322070', 4),
+('3322070007', 'TEGARON', '3322070', 4),
+('3322070008', 'KEBONDOWO', '3322070', 4),
+('3322070009', 'BANYUBIRU', '3322070', 4),
+('3322070010', 'NGRAPAH', '3322070', 4),
+('3322080', 'JAMBU', '3322', 3),
+('3322080001', 'GEMAWANG', '3322080', 4),
+('3322080002', 'BEDONO', '3322080', 4),
+('3322080003', 'KELURAHAN', '3322080', 4),
+('3322080004', 'BRONGKOL', '3322080', 4),
+('3322080005', 'JAMBU', '3322080', 4),
+('3322080006', 'GONDORIYO', '3322080', 4),
+('3322080007', 'KUWARASAN', '3322080', 4),
+('3322080008', 'KEBONDALEM', '3322080', 4),
+('3322080009', 'REJOSARI', '3322080', 4),
+('3322080010', 'GENTING', '3322080', 4),
+('3322090', 'SUMOWONO', '3322', 3),
+('3322090001', 'KEBONAGUNG', '3322090', 4),
+('3322090002', 'NGADIKERSO', '3322090', 4),
+('3322090003', 'LANJAN', '3322090', 4),
+('3322090004', 'CANDIGARON', '3322090', 4),
+('3322090005', 'KEMITIR', '3322090', 4),
+('3322090006', 'TRAYU', '3322090', 4),
+('3322090007', 'SUMOWONO', '3322090', 4),
+('3322090008', 'JUBELAN', '3322090', 4),
+('3322090010', 'MENDONGAN', '3322090', 4),
+('3322090011', 'LOSARI', '3322090', 4),
+('3322090012', 'KEMAWI', '3322090', 4),
+('3322090013', 'PIYANGGANG', '3322090', 4),
+('3322090014', 'PLEDOKAN', '3322090', 4),
+('3322100', 'AMBARAWA', '3322', 3),
+('3322100001', 'NGAMPIN', '3322100', 4),
+('3322100002', 'POJOKSARI', '3322100', 4),
+('3322100003', 'BEJALEN', '3322100', 4),
+('3322100004', 'TAMBAKBOYO', '3322100', 4),
+('3322100005', 'KUPANG', '3322100', 4),
+('3322100006', 'LODOYONG', '3322100', 4),
+('3322100007', 'KRANGGAN', '3322100', 4),
+('3322100008', 'PANJANG', '3322100', 4),
+('3322100009', 'PASEKAN', '3322100', 4),
+('3322100010', 'BARAN', '3322100', 4),
+('3322101', 'BANDUNGAN', '3322', 3),
+('3322101001', 'MLILIR', '3322101', 4),
+('3322101003', 'JETIS', '3322101', 4),
+('3322101004', 'BANDUNGAN', '3322101', 4),
+('3322101006', 'CANDI', '3322101', 4),
+('3322101007', 'BANYUKUNING', '3322101', 4),
+('3322101008', 'JIMBARAN', '3322101', 4),
+('3322101009', 'PAKOPEN', '3322101', 4),
+('3322101010', 'SIDOMUKTI', '3322101', 4),
+('3322110', 'BAWEN', '3322', 3),
+('3322110001', 'DOPLANG', '3322110', 4),
+('3322110002', 'BAWEN', '3322110', 4),
+('3322110003', 'ASINAN', '3322110', 4),
+('3322110004', 'POLOSIRI', '3322110', 4),
+('3322110005', 'KANDANGAN', '3322110', 4),
+('3322110006', 'LEMAHIRENG', '3322110', 4),
+('3322110007', 'HARJOSARI', '3322110', 4),
+('3322110008', 'SAMBAN', '3322110', 4),
+('3322110009', 'PONCORUSO', '3322110', 4),
+('3322120', 'BRINGIN', '3322', 3),
+('3322120001', 'BRINGIN', '3322120', 4),
+('3322120002', 'POPONGAN', '3322120', 4),
+('3322120003', 'PAKIS', '3322120', 4),
+('3322120004', 'LEBAK', '3322120', 4),
+('3322120005', 'BANDING', '3322120', 4),
+('3322120006', 'TRUKO', '3322120', 4),
+('3322120016', 'NYEMOH', '3322120', 4),
+('3322120017', 'TEMPURAN', '3322120', 4),
+('3322120018', 'WIRU', '3322120', 4),
+('3322120019', 'SENDANG', '3322120', 4),
+('3322120020', 'GOGODALEM', '3322120', 4),
+('3322120022', 'KALIKURMO', '3322120', 4),
+('3322120023', 'SAMBIREJO', '3322120', 4),
+('3322120024', 'KALIJAMBE', '3322120', 4),
+('3322120025', 'TANJUNG', '3322120', 4),
+('3322121', 'BANCAK', '3322', 3),
+('3322121002', 'REJOSARI', '3322121', 4),
+('3322121004', 'PLUMUTAN', '3322121', 4),
+('3322121005', 'BANTAL', '3322121', 4),
+('3322121006', 'JLUMPANG', '3322121', 4),
+('3322121007', 'BANCAK', '3322121', 4),
+('3322121008', 'WONOKERTO', '3322121', 4),
+('3322121009', 'BOTO', '3322121', 4),
+('3322130', 'PRINGAPUS', '3322', 3),
+('3322130001', 'DEREKAN', '3322130', 4),
+('3322130003', 'PRINGAPUS', '3322130', 4),
+('3322130004', 'PRINGSARI', '3322130', 4),
+('3322130005', 'JATIRUNGGO', '3322130', 4),
+('3322130006', 'WONOYOSO', '3322130', 4),
+('3322130007', 'WONOREJO', '3322130', 4),
+('3322130008', 'CANDIREJO', '3322130', 4),
+('3322130009', 'PENAWANGAN', '3322130', 4),
+('3322140', 'BERGAS', '3322', 3),
+('3322140001', 'MUNDING', '3322140', 4),
+('3322140002', 'PAGERSARI', '3322140', 4),
+('3322140003', 'GEBUGAN', '3322140', 4),
+('3322140004', 'WUJIL', '3322140', 4),
+('3322140005', 'BERGAS LOR', '3322140', 4),
+('3322140006', 'BERGAS KIDUL', '3322140', 4),
+('3322140007', 'RANDUGUNTING', '3322140', 4),
+('3322140008', 'JATIJAJAR', '3322140', 4),
+('3322140009', 'DIWAK', '3322140', 4),
+('3322140010', 'NGEMPON', '3322140', 4),
+('3322140011', 'KARANGJATI', '3322140', 4),
+('3322140012', 'WRINGIN PUTIH', '3322140', 4),
+('3322140013', 'GONDORIYO', '3322140', 4),
+('3322151', 'UNGARAN BARAT', '3322', 3),
+('3322151001', 'GOGIK', '3322151', 4),
+('3322151002', 'LANGENSARI', '3322151', 4),
+('3322151003', 'CANDIREJO', '3322151', 4),
+('3322151004', 'NYATNYONO', '3322151', 4),
+('3322151006', 'UNGARAN', '3322151', 4),
+('3322151007', 'BANDARJO', '3322151', 4),
+('3322151009', 'KEJI', '3322151', 4),
+('3322151010', 'KALISIDI', '3322151', 4),
+('3322151011', 'BRANJANG', '3322151', 4),
+('3322152', 'UNGARAN TIMUR', '3322', 3),
+('3322152001', 'BEJI', '3322152', 4),
+('3322152002', 'LEYANGAN', '3322152', 4),
+('3322152003', 'KALONGAN', '3322152', 4),
+('3322152004', 'KAWENGEN', '3322152', 4),
+('3322152005', 'KALIKAYEN', '3322152', 4),
+('3322152007', 'SUSUKAN', '3322152', 4),
+('3322152008', 'KALIREJO', '3322152', 4),
+('3322152009', 'SIDOMULYO', '3322152', 4),
+('3322152010', 'GEDANGANAK', '3322152', 4);
 
 -- --------------------------------------------------------
 
@@ -3346,8 +3586,8 @@ CREATE TABLE `tblobatmasuk` (
 --
 
 CREATE TABLE `tblpasien` (
-  `id` varchar(255) DEFAULT NULL,
-  `nik` varchar(255) DEFAULT NULL,
+  `id` varchar(11) NOT NULL,
+  `nik` varchar(255) NOT NULL,
   `bpjs_no` varchar(255) DEFAULT NULL,
   `nama` varchar(255) DEFAULT NULL,
   `pasien_type` varchar(255) DEFAULT NULL,
@@ -3363,6 +3603,13 @@ CREATE TABLE `tblpasien` (
   `education` varchar(255) DEFAULT NULL,
   `phone` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblpasien`
+--
+
+INSERT INTO `tblpasien` (`id`, `nik`, `bpjs_no`, `nama`, `pasien_type`, `blood_type`, `alamat`, `orchard_id`, `village`, `district`, `city`, `birth_dt`, `sex`, `work`, `education`, `phone`) VALUES
+('P0000001', '3373042407940002', '3373656564564', 'Wahid Candra Saputra', '100001', '100002', 'Karang Padang RT 02 RW 03', '', '3322031003', '3322031', '3322', '1994-07-24', '100001', 'Swasta', '100008', '085800033665');
 
 -- --------------------------------------------------------
 
@@ -3427,7 +3674,7 @@ CREATE TABLE `tbltindakan` (
 --
 
 CREATE TABLE `tblvisits` (
-  `id` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL,
   `pasien_id` varchar(255) DEFAULT NULL,
   `visit_dt` date DEFAULT NULL,
   `visit_type` varchar(255) DEFAULT NULL,
@@ -3461,6 +3708,13 @@ CREATE TABLE `tblvisits` (
   `del_yn` varchar(255) DEFAULT NULL,
   `del_dt` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblvisits`
+--
+
+INSERT INTO `tblvisits` (`id`, `pasien_id`, `visit_dt`, `visit_type`, `inap_yn`, `worker_id`, `kunj_sakit`, `puskesmas_id`, `poli_cd`, `bpjs_kunj`, `bpjs_no`, `keluhan`, `sadar_cd`, `sistole`, `diastole`, `bb`, `tb`, `resprate`, `heartrate`, `rujukan_provider`, `pulang_cd`, `pulang_dt`, `dokter_cd`, `diag_1`, `diag_2`, `diag_3`, `action_id`, `rujukan_poli`, `rujuk_lanjut`, `ins_id`, `ins_dt`, `del_yn`, `del_dt`) VALUES
+(1, 'P0000001', '2019-09-24', '1', 'N', NULL, 1, 1, '100001', '1', '3373656564564', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -3504,6 +3758,12 @@ ALTER TABLE `sysmodule`
   ADD PRIMARY KEY (`program_id`);
 
 --
+-- Indexes for table `sysregion`
+--
+ALTER TABLE `sysregion`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sysrole`
 --
 ALTER TABLE `sysrole`
@@ -3534,9 +3794,21 @@ ALTER TABLE `tblobat`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tblpasien`
+--
+ALTER TABLE `tblpasien`
+  ADD PRIMARY KEY (`id`,`nik`);
+
+--
 -- Indexes for table `tblpuskesmas`
 --
 ALTER TABLE `tblpuskesmas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tblvisits`
+--
+ALTER TABLE `tblvisits`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -3547,12 +3819,18 @@ ALTER TABLE `tblpuskesmas`
 -- AUTO_INCREMENT for table `syslog`
 --
 ALTER TABLE `syslog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `sysuser`
 --
 ALTER TABLE `sysuser`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tblvisits`
+--
+ALTER TABLE `tblvisits`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 

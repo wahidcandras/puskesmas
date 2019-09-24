@@ -1,0 +1,1 @@
+<script src="<?= base_url().'assets/' ?>lib/select2/js/select2.full.min.js"></script>
