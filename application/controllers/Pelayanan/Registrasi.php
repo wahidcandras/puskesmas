@@ -19,7 +19,7 @@ class Registrasi extends MY_Controller {
 		$data['pendidikan'] = $this->M_Base->code('100003')->result();
 		$data['pasien_type'] = $this->M_Base->code('100005')->result();
 		$data['kecamatan'] = $this->M_Base->region('3322',3)->result();
-
+		$data['message'] = $this->session->userdata('message');
 		$this->_render_page($data);
 		
 	}
@@ -35,6 +35,13 @@ class Registrasi extends MY_Controller {
 		$id = $this->input->post('id');
 		$data = $this->M_Registrasi->getByRM($id)->row();
 		echo json_encode($data);
+	}
+
+	function getByBpjs(){
+		$id = $this->input->post('id');
+		$bpjsno = '0001529477346';
+		$data = $this->bpjs_API('peserta/'.$id);
+		echo json_encode($data['response']);
 	}
 
 	function add(){
@@ -78,8 +85,23 @@ class Registrasi extends MY_Controller {
 			"bpjs_no" => $this->input->post('nobpjs'),
 		);
 
-		$this->M_Registrasi->insertVisit($visit);
+		$result = $this->M_Registrasi->insertVisit($visit);
+
+		if ($result) {
+			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button> <strong>Berhasil</strong> Registrasi Pasien Berhasil...
+          </div>');
+		}else{
+			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button> <strong>Error</strong> Registrasi Pasien Gagal...
+          </div>');
+		}
 		
+			redirect('Pelayanan/Registrasi','refresh');
 
 	}
 

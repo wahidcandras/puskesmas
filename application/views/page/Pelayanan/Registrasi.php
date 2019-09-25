@@ -8,12 +8,19 @@
 </div><!-- slim-pageheader -->
 
 <div class="section-wrapper">
-  <form action="<?= site_url('Pelayanan/Registrasi/add')?>" method="POST">
-    
+  
+  <?php 
+    if (isset($message)) {
+      echo $message;
+    }
+   ?>
 
+  <form action="<?= site_url('Pelayanan/Registrasi/add')?>" method="POST">
  <div class="form-layout">
   <div class="row">
     <div class="col-md-6">
+      <label class="section-title">Data Pasien</label>
+      <br>
       <div class="row ">
           <div class="col-lg-6">
             <div class="form-group">
@@ -72,7 +79,7 @@
               <div class="input-group">
                 <input type="text" class="form-control" name="nobpjs" id="nobpjs" placeholder="Nomor BPJS">
                 <span class="input-group-btn">
-                  <button class="btn bd bd-l-0 bg-white tx-gray-600" type="button"><i class="fa fa-search"></i></button>
+                  <button class="btn bd bd-l-0 bg-white tx-gray-600" type="button" onclick="searchByBPJS()"><i class="fa fa-search"></i></button>
                 </span>
               </div><!-- input-group -->
             </div>
@@ -195,6 +202,8 @@
 
     </div>
     <div class="col-md-5 offset-md-1">
+      <label class="section-title">Data Kunjungan</label>
+      <br>
       <div class="row ">
           <div class="col-lg-6">
             <div class="form-group">

@@ -8,7 +8,7 @@ class M_Registrasi extends CI_Model {
 
 
 	function generate(){
-		$sql ="SELECT CONCAT('P',RIGHT(CONCAT('0000000',COALESCE(MAX(id),0)+1),7)) as id FROM `tblpasien`";
+		$sql ="SELECT CONCAT('P',RIGHT(CONCAT('0000000',COALESCE(MAX(RIGHT(id,7)),0)+1),7)) as id FROM `tblpasien`";
 		return $this->db->query($sql)->row()->id;
 	}
 	function getByRM($id){
